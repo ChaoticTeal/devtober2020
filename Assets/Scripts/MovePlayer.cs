@@ -70,7 +70,7 @@ public class MovePlayer : MonoBehaviour
     /// <param name="callbackContext"></param>
     public void GetJumpInput(InputAction.CallbackContext callbackContext)
     {
-        if (!isJumping)
+        if (!isJumping && callbackContext.performed)
             shouldJump = true;
     }
 
