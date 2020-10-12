@@ -36,6 +36,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Debug_ChangeSeason",
+                    "type": "Button",
+                    "id": "36f6f0a8-0b6e-4933-82c7-a7856570c24c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -289,6 +297,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "50dfbee6-f35c-4565-8108-6ba1588433a6",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Debug_ChangeSeason",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

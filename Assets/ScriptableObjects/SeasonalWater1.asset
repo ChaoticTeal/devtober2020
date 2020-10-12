@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffec7c2acdebf574a946cba43eab1d43, type: 3}
+  m_Name: SeasonalWater1
+  m_EditorClassIdentifier: 
+  seasonTiles:
+  - {fileID: 11400000, guid: bc8bc34bc6f9867448cc8a0490902a94, type: 2}
+  - {fileID: 11400000, guid: 4ccbc6e5d518f334385b8cf6d3769570, type: 2}
+  - {fileID: 11400000, guid: c3fc4a0a1c6db2a439d658c20f500945, type: 2}
+  - {fileID: 11400000, guid: 53daac3bb14b9ba4b9790c180f9e5736, type: 2}
