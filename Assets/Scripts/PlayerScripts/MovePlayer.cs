@@ -21,13 +21,26 @@ public class MovePlayer : MonoBehaviour
     [SerializeField]
     private Transform groundDetectPoint;
 
+    [SerializeField]
+    private float minGravityScale = 12f;
+
+    [SerializeField]
+    private float maxGravityScale;
+
+    [SerializeField]
+    private float maxJumpHoldDuration = 0.5f;
+
     private Animator animator;
     private Vector2 moveInput = new Vector2(0f, 0f);
     private Rigidbody2D rb;
     private bool canMove = true;
-    private bool shouldJump;
+    private bool jumpButtonPressed;
     private bool isJumping;
+    private bool canJumpAgain = true;
     private bool wasOnGround;
+    private float jumpHeldTime;
+    private float jumpPressedTime;
+    private float gravityDif;
 
     private void Start()
     {
@@ -41,6 +54,7 @@ public class MovePlayer : MonoBehaviour
         {
             Move();
             Jump();
+            UpdateGravity();
             if (!wasOnGround && CheckIsOnGround())
                 isJumping = false;
         }
@@ -50,6 +64,22 @@ public class MovePlayer : MonoBehaviour
     private void Update()
     {
         UpdateAnims();
+    }
+
+    private void UpdateGravity()
+    {
+        if (isJumping)
+        {
+            float gravityDif = maxGravityScale - minGravityScale;
+            if(jumpButtonPressed)
+                jumpHeldTime = Time.time - jumpPressedTime;
+            float gravityRatio = (maxJumpHoldDuration - jumpHeldTime) / maxJumpHoldDuration;
+            if (gravityRatio < 0)
+                gravityRatio = 0;
+            rb.gravityScale = minGravityScale + (gravityDif * gravityRatio);
+        }
+        else
+            rb.gravityScale = maxGravityScale;
     }
 
     /// <summary>
@@ -70,8 +100,19 @@ public class MovePlayer : MonoBehaviour
     /// <param name="callbackContext"></param>
     public void GetJumpInput(InputAction.CallbackContext callbackContext)
     {
-        if (!isJumping && callbackContext.performed)
-            shouldJump = true;
+        if (canJumpAgain && !isJumping && callbackContext.performed)
+        {
+            jumpButtonPressed = true;
+            canJumpAgain = false;
+            jumpPressedTime = Time.time;
+            Debug.Log("Jump started: " + jumpPressedTime);
+        }
+        if (jumpButtonPressed && callbackContext.canceled)
+        {
+            jumpButtonPressed = false;
+            canJumpAgain = true;
+            Debug.Log("Jump ended: " + jumpHeldTime);
+        }
     }
 
     private void Move()
@@ -81,10 +122,9 @@ public class MovePlayer : MonoBehaviour
 
     private void Jump()
     {
-        if(shouldJump && !isJumping && CheckIsOnGround())
+        if (jumpButtonPressed && !isJumping && CheckIsOnGround())
         {
             isJumping = true;
-            shouldJump = false;
             rb.AddForce(Vector2.up * jumpForce);
             wasOnGround = false;
         }

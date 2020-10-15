@@ -7445,6 +7445,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   groundDetectPoint: {fileID: 2047008478}
+  minGravityScale: 12
+  maxGravityScale: 15
+  maxJumpHoldDuration: 0.5
 --- !u!114 &560366352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7590,7 +7593,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &560366354
 Animator:
