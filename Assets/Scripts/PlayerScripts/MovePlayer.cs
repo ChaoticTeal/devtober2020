@@ -38,8 +38,8 @@ public class MovePlayer : MonoBehaviour
     private bool isJumping;
     private bool canJumpAgain = true;
     private bool wasOnGround;
-    private float jumpHeldTime;
-    private float jumpPressedTime;
+    public float jumpHeldTime;
+    public float jumpPressedTime;
     private float gravityDif;
 
     private void Start()
@@ -70,9 +70,13 @@ public class MovePlayer : MonoBehaviour
     {
         if (isJumping)
         {
+            Debug.Log("Jumping");
             float gravityDif = maxGravityScale - minGravityScale;
-            if(jumpButtonPressed)
+            if (jumpButtonPressed)
+            {
+                Debug.Log("Jump Held");
                 jumpHeldTime = Time.time - jumpPressedTime;
+            }
             float gravityRatio = (maxJumpHoldDuration - jumpHeldTime) / maxJumpHoldDuration;
             if (gravityRatio < 0)
                 gravityRatio = 0;
@@ -100,10 +104,9 @@ public class MovePlayer : MonoBehaviour
     /// <param name="callbackContext"></param>
     public void GetJumpInput(InputAction.CallbackContext callbackContext)
     {
-        if (canJumpAgain && !isJumping && callbackContext.performed)
+        if (canJumpAgain && !isJumping && callbackContext.started)
         {
             jumpButtonPressed = true;
-            canJumpAgain = false;
             jumpPressedTime = Time.time;
             Debug.Log("Jump started: " + jumpPressedTime);
         }
@@ -122,11 +125,12 @@ public class MovePlayer : MonoBehaviour
 
     private void Jump()
     {
-        if (jumpButtonPressed && !isJumping && CheckIsOnGround())
+        if (jumpButtonPressed && !isJumping && CheckIsOnGround() && canJumpAgain)
         {
             isJumping = true;
+            canJumpAgain = false;
             rb.AddForce(Vector2.up * jumpForce);
-            wasOnGround = false;
+            //wasOnGround = false;
         }
     }
 
