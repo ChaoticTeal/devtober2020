@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffec7c2acdebf574a946cba43eab1d43, type: 3}
+  m_Name: SeasonalGround8
+  m_EditorClassIdentifier: 
+  seasonTiles:
+  - {fileID: 11400000, guid: 7d91cee2abd45a644a4e7bff75f60ef2, type: 2}
+  - {fileID: 11400000, guid: 4d59796c5f96ddf40be96aaa7b4ea4df, type: 2}
+  - {fileID: 11400000, guid: 9f330a41739f4e24287c1f2d7ad7bcfd, type: 2}
+  - {fileID: 11400000, guid: 312a346934ba48244b8e536e1f4d9111, type: 2}

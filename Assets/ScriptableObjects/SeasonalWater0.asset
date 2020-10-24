@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SeasonalWater0
   m_EditorClassIdentifier: 
   seasonTiles:
-  - {fileID: 11400000, guid: 09896f56a005e97449c94230a14bb1e7, type: 2}
-  - {fileID: 11400000, guid: 81cfc00498a9b7148aa157867f4fc0d9, type: 2}
-  - {fileID: 11400000, guid: c7d19253a203bad4a969f47b4bd7b566, type: 2}
-  - {fileID: 11400000, guid: 091708bdadf36db4e983171a7360f21a, type: 2}
+  - {fileID: 11400000, guid: 457de247450f71748934f0e9475bda64, type: 2}
+  - {fileID: 11400000, guid: 766bbae71924fbc4dbdab6437a3ef32a, type: 2}
+  - {fileID: 11400000, guid: 8c0a60801038a3b4fa13a68a0e941a67, type: 2}
+  - {fileID: 11400000, guid: 8c5adcf3a10b4ef49adabe28d6618fdb, type: 2}

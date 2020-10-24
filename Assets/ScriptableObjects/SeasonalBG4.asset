@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SeasonalBG4
   m_EditorClassIdentifier: 
   seasonTiles:
-  - {fileID: 11400000, guid: 9732661ca2a9c0c4b8fc268c1da22b88, type: 2}
-  - {fileID: 11400000, guid: 018366bfbfbda99489a21b46d3022be9, type: 2}
-  - {fileID: 11400000, guid: 81b2c366c5e9dbb48ad5cbe8920ebf16, type: 2}
-  - {fileID: 11400000, guid: 5292c39b472d45142b9e3a3367f1acd4, type: 2}
+  - {fileID: 11400000, guid: 3abe8429c1fa90f48be868cd79149154, type: 2}
+  - {fileID: 11400000, guid: b09a9ed0f6abfc94f895cfbcd966a5dd, type: 2}
+  - {fileID: 11400000, guid: e31f08c8e3aad8e4ca4166568ea1ddde, type: 2}
+  - {fileID: 11400000, guid: fad1e797db24ec642b88f0845aa9cd4b, type: 2}
